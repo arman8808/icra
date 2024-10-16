@@ -9,6 +9,7 @@ import SingleBlog from "./Pages/Blog/SingleBlog";
 import NavBar from "./Components/NavBar/NavBar";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import ScrollToTop from "./ScrollToTop";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route element={<Blog />} path="/blog" />
         <Route element={<SingleBlog />} path="/blog/:singleblog" />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

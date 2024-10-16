@@ -50,6 +50,7 @@ module.exports = {
         background:'#efffe6',
         secondryBackground:'#F7F7FC',
         blackShade:'#11142D',
+        footerText:"#92929D"
 
       },
       backgroundImage: {

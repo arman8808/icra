@@ -1,5 +1,6 @@
 import React from "react";
 import ConatctForm from "../../Components/ConatctForm/ConatctForm";
+import GetInTouchCard from "../../Components/GetInTouchCard/GetInTouchCard";
 
 function ContactUs() {
   return (
@@ -15,6 +16,9 @@ function ContactUs() {
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+      <div className="w-[80%]">
+          <GetInTouchCard />
+        </div>
     </div>
   );
 }

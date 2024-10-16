@@ -19,3 +19,21 @@ body {
 .border_bottom{
   border-bottom: 5px solid #547FF3;
 }
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+ 
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  backdrop-filter: blur(10px); /* Blurring the background behind */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  padding: 20px; /* Padding inside the element */
+  color: #fff; /* White text */
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
