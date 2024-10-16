@@ -50,6 +50,7 @@ function Footer() {
                 type="text"
                 placeholder="Enter your Email"
                 className="border-2-[#DBD7F4] py-[0.5rem] px-[1rem] rounded-l-md outline-none"
+                required
               />
               <button className="bg-green py-[0.7rem] rounded-r-md px-[1rem] text-white">
                 <FaPlay />

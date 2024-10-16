@@ -18,7 +18,7 @@ export default function AccordionUsage({ title, detail }) {
         >
           {title ? title : "Accordion"}
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className="bg-[#DCFDCA] ">
           {detail
             ? detail
             : "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse  malesuada lacus ex, sit amet blandit leo lobortis eget."}

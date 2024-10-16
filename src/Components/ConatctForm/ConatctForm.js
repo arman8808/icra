@@ -33,6 +33,7 @@ function ConatctForm() {
                 type="text"
                 placeholder="Input your first name  here"
                 className="p-2 rounded-md border-none outline-none w-full"
+                required
               />
             </span>{" "}
             <span className="w-full flex items-start justify-start gap-1 flex-col">
@@ -41,6 +42,7 @@ function ConatctForm() {
                 type="text"
                 placeholder="Input your Last Name  here"
                 className="p-2 rounded-md border-none outline-none w-full"
+                required
               />
             </span>{" "}
             <span className="w-full flex items-start justify-start gap-1 flex-col">
@@ -49,6 +51,7 @@ function ConatctForm() {
                 type="text"
                 placeholder="Input your Email Address  here"
                 className="p-2 rounded-md border-none outline-none w-full"
+                required
               />
             </span>{" "} 
             <span className="w-full flex items-start justify-start gap-1 flex-col">
@@ -57,6 +60,7 @@ function ConatctForm() {
                 type="text"
                 placeholder="Input your Company Name  here"
                 className="p-2 rounded-md border-none outline-none w-full"
+                required
               />
             </span>{" "}
 
@@ -67,6 +71,7 @@ function ConatctForm() {
                rows='5'
                 placeholder="Input your Messages here"
                 className="p-2 rounded-md border-none outline-none w-full"
+                required
               />
               </span>
               <button className="button bg-green text-white mt-4">Send Message</button>
