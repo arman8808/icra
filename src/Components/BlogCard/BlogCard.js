@@ -14,7 +14,7 @@ function BlogCard({ image, title, subDec }) {
           <h6 className="text-blackShade text-sm font-extraBold">
             DEVELOPMENT
           </h6>
-          <p className="text-sm text-textColor">23 September 2020</p>
+          <p className="text-sm text-textColor">23 September 2024</p>
         </span>
         <h2 className="text-blackShade text-xl font-extraBold">
           {title

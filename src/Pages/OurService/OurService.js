@@ -15,56 +15,65 @@ import icon5 from "../../Assests/Images/Icon-2.png";
 import dotsgreen from "../../Assests/Images/Ornament12.png";
 import GetInTouchCard from "../../Components/GetInTouchCard/GetInTouchCard";
 import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard";
+import FadeInSection from "../../Utils/FadeInSection/FadeInSection ";
 
 function OurService() {
   return (
     <>
       {" "}
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] mt-[2rem]  pt-4">
-        <div className="w-[80%] grid grid-cols-3 gap-[2rem] items-center justify-center">
-          <img src={img} alt="banner" />
-          <div className="col-span-2 ">
-            <h2 className="text-[#0B2F04] text-2xl font-bold">Our Service</h2>
-            <p className="  text-3xl text-[#5B5A78] ">
-              At Impulse Capital & Research Analysis Pvt Ltd, we offer a wide
-              range of services to help businesses and individuals make informed
-              financial decisions, grow their wealth, and succeed in the global
-              marketplace.
+        <FadeInSection>
+          <div className="w-[80%] grid grid-cols-3 gap-[2rem] items-center justify-center">
+            <img src={img} alt="banner" />
+            <div className="col-span-2 ">
+              <h2 className="text-[#0B2F04] text-2xl font-bold">Our Service</h2>
+              <p className="  text-3xl text-[#5B5A78] ">
+                At Impulse Capital & Research Analysis Pvt Ltd, we offer a wide
+                range of services to help businesses and individuals make
+                informed financial decisions, grow their wealth, and succeed in
+                the global marketplace.
+              </p>
+            </div>
+          </div>
+        </FadeInSection>
+        <FadeInSection>
+          <div className="w-[80%] flex flex-col gap-4 items-start justify-start">
+            <h2 className="text-4xl font-extraBold text-[#413939]">
+              What our business do
+            </h2>
+            <p className="text-[#5B5A78] font-bold text-base">
+              Our business is dedicated to providing expert financial consulting
+              services, with a focus on the stock market, venture capital, and
+              strategic investments. Our core services include:
             </p>
           </div>
-        </div>
-        <div className="w-[80%] flex flex-col gap-4 items-start justify-start">
-          <h2 className="text-4xl font-extraBold text-[#413939]">
-            What our business do
-          </h2>
-          <p className="text-[#5B5A78] font-bold text-base">
-            Our business is dedicated to providing expert financial consulting
-            services, with a focus on the stock market, venture capital, and
-            strategic investments. Our core services include:
-          </p>
-        </div>
-        <div className="w-[80%] flex  gap-4 items-start justify-start ">
-          <BusinessCard
-            image={icon3}
-            para={
-              "Investment Advisory: We provide personalized investment solutions to help you maximize your returns while minimizing risks. Whether you're a seasoned investor or a beginner, we have the tools and knowledge to assist you."
-            }
-          />
-          <BusinessCard
-            image={icon4}
-            para={
-              "Strategic Market Research: Our deep analysis and data-driven approach ensure that you receive the best advice on current market trends, opportunities, and risks."
-            }
-          />
-        </div>
-        <div className="w-[40%] flex  gap-4 items-center justify-center ">
-          <BusinessCard
-            image={icon5}
-            para={
-              "Venture Capital Consulting: Our team works closely with startups and established businesses to secure venture capital funding, guiding them through every step of the process."
-            }
-          />
-        </div>
+        </FadeInSection>
+        <FadeInSection>
+          <div className="w-[80%] flex  gap-4 items-start justify-start ">
+            <BusinessCard
+              image={icon3}
+              para={
+                "Investment Advisory: We provide personalized investment solutions to help you maximize your returns while minimizing risks. Whether you're a seasoned investor or a beginner, we have the tools and knowledge to assist you."
+              }
+            />
+            <BusinessCard
+              image={icon4}
+              para={
+                "Strategic Market Research: Our deep analysis and data-driven approach ensure that you receive the best advice on current market trends, opportunities, and risks."
+              }
+            />
+          </div>
+        </FadeInSection>
+        <FadeInSection>
+          <div className="w-[40%] flex  gap-4 items-center justify-center ">
+            <BusinessCard
+              image={icon5}
+              para={
+                "Venture Capital Consulting: Our team works closely with startups and established businesses to secure venture capital funding, guiding them through every step of the process."
+              }
+            />
+          </div>
+        </FadeInSection>
         <div className="w-[80%] flex  gap-[2.5rem] items-start justify-start flex-col bg-white py-[3%] px-[5%] mt-[2rem] rounded-md">
           <span className="flex items-center justify-center flex-col w-full">
             <h2 className="text-[#0B2F04] text-2xl font-bold">How it Works</h2>
@@ -107,54 +116,60 @@ function OurService() {
             </div>
           </div>
         </div>
-        <div className="w-[80%]   gap-[2rem] grid grid-cols-3  bg-white py-[2%] px-[2%] mt-[2rem] rounded-3xl relative">
-          <img src={Group} alt="Group" className="object-cover" />
-          <div className="col-span-2 flex items-start justify-start gap-2 flex-col pl-[5%]">
-            <h2 className="text-[#0B2F04] text-3xl font-bold">
-              Precise Calculation with Our Patent Methods
-            </h2>
-            <p className="text-[#5B5A78] leading-9">
-              Our financial strategies are built on precision. With patented
-              methods, we ensure that every decision is backed by reliable data
-              and accurate calculations.
-            </p>
-            <ul className="flex items-start justify-start gap-2 flex-col list-disc">
-              <li className="text-[#5B5A78] leading-9">
-                Advanced Algorithms: Our algorithms identify market trends and
-                predict future movements.
-              </li>
-              <li className="text-[#5B5A78] leading-9">
-                Tailored Recommendations: We provide customized solutions based
-                on your financial profile.
-              </li>
-              <li className="text-[#5B5A78] leading-9">
-                Maximized Returns: Our methods ensure that you get the best
-                possible outcomes from your investments.
-              </li>
-            </ul>
-            <p className="text-[#5B5A78] leading-9">
-              Current Success Rate: 82.3% – Our patented strategies have helped
-              our clients achieve consistent success in their financial
-              endeavors
-            </p>
+        <FadeInSection>
+          <div className="w-[80%]   gap-[2rem] grid grid-cols-3  bg-white py-[2%] px-[2%] mt-[2rem] rounded-3xl relative">
+            <img src={Group} alt="Group" className="object-cover" />
+            <div className="col-span-2 flex items-start justify-start gap-2 flex-col pl-[5%]">
+              <h2 className="text-[#0B2F04] text-3xl font-bold">
+                Precise Calculation with Our Patent Methods
+              </h2>
+              <p className="text-[#5B5A78] leading-9">
+                Our financial strategies are built on precision. With patented
+                methods, we ensure that every decision is backed by reliable
+                data and accurate calculations.
+              </p>
+              <ul className="flex items-start justify-start gap-2 flex-col list-disc">
+                <li className="text-[#5B5A78] leading-9">
+                  Advanced Algorithms: Our algorithms identify market trends and
+                  predict future movements.
+                </li>
+                <li className="text-[#5B5A78] leading-9">
+                  Tailored Recommendations: We provide customized solutions
+                  based on your financial profile.
+                </li>
+                <li className="text-[#5B5A78] leading-9">
+                  Maximized Returns: Our methods ensure that you get the best
+                  possible outcomes from your investments.
+                </li>
+              </ul>
+              <p className="text-[#5B5A78] leading-9">
+                Current Success Rate: 82.3% – Our patented strategies have
+                helped our clients achieve consistent success in their financial
+                endeavors
+              </p>
+            </div>
+            <img
+              src={dots2}
+              alt="green dots"
+              className="absolute left-0 top-20  object-cover"
+            />
           </div>
-          <img
-            src={dots2}
-            alt="green dots"
-            className="absolute left-0 top-20  object-cover"
-          />
-        </div>
+        </FadeInSection>
       </div>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[4rem] mt-[3rem] bg-custom-gradient relative">
         <div className="w-[80%] flex items-start justify-start flex-col gap-4">
-          <h2 className="text-white text-2xl font-bold">
-            See what our client say about us
-          </h2>
-          <div className="w-full grid grid-cols-3 gap-4">
-            <TestimonialCard />
-            <TestimonialCard />
-            <TestimonialCard />
-          </div>
+          <FadeInSection>
+            <h2 className="text-white text-2xl font-bold">
+              See what our client say about us
+            </h2>
+          </FadeInSection>
+          <FadeInSection>
+            <div className="w-full grid grid-cols-3 gap-4">
+              <TestimonialCard />
+              <TestimonialCard />
+              <TestimonialCard />
+            </div>
+          </FadeInSection>
         </div>
         <img
           src={dots}
@@ -168,9 +183,11 @@ function OurService() {
         />
       </div>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem] relative">
-        <div className="w-[80%]">
-          <GetInTouchCard />
-        </div>
+        <FadeInSection>
+          <div className="w-[80%]">
+            <GetInTouchCard />
+          </div>
+        </FadeInSection>
         <img
           src={dotsgreen}
           alt="green dots"

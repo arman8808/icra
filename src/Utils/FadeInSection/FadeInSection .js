@@ -21,7 +21,7 @@ const FadeInSection = ({ children }) => {
 
   return (
     <div
-      className={`fade-in ${isVisible ? 'show' : ''}`}
+      className={`fade-in ${isVisible ? 'show w-full flex items-center justify-center flex-col' : 'w-full flex items-center justify-center flex-col'}`}
       ref={domRef}
     >
       {children}

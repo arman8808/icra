@@ -68,50 +68,54 @@ function AboutUs() {
   return (
     <>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem]  pt-4">
-        
-        <div className="w-[90%] flex items-center justify-center gap-[4rem] relative mt-4">
-    
+        <FadeInSection>
+          <div className="w-[90%] flex items-center justify-center gap-[4rem] relative mt-4">
+            <img
+              src={aboutus}
+              alt="aboutus"
+              className="rounded-md w-full h-[28rem]"
+            />
 
-          <img
-            src={aboutus}
-            alt="aboutus"
-            className="rounded-md w-full h-[28rem]"
-          />
-   
-          <span className="flex items-start justify-start gap-4 flex-col absolute w-[80%]">
-            <h1 className="text-white text-3xl font-bold">About us</h1>
-            <p className="text-white leading-8">
-              At Impulse Capital & Research Analysis Pvt Ltd, we are dedicated
-              to helping our clients navigate the complex world of venture
-              capital and stock market trading. With a global presence and a
-              team of seasoned financial consultants, we specialize in
-              delivering strategic solutions tailored to meet the unique needs
-              of our clients.
-            </p>
-          </span>
-        </div>
-        <div className="w-[80%] flex items-center justify-between flex-col gap-4">
-          <span className="flex items-start justify-start flex-col gap-1">
-            <h2 className="text-blackShade font-bold text-2xl">Our Mission</h2>
-            <p className="text-textColor font-normal">
-              Our mission is to empower individuals and businesses to reach new
-              heights through strategic financial insights, cutting-edge market
-              research, and personalized investment solutions. We believe that
-              with the right tools, anyone can succeed in the global financial
-              markets.
-            </p>
-          </span>{" "}
-          <span className="flex items-start justify-start flex-col gap-1">
-            <h2 className="text-blackShade font-bold text-2xl">Our Vision</h2>
-            <p className="text-textColor font-normal">
-              To be a leading force in global financial consulting, guiding
-              entrepreneurs and investors toward a brighter, more prosperous
-              future. We aim to create a positive impact through sustainable
-              investments and responsible financial practices.
-            </p>
-          </span>
-          <img src={aboutus1} alt="aboutus1" className="w-full h-[22rem]" />
-        </div>
+            <span className="flex items-start justify-start gap-4 flex-col absolute w-[80%]">
+              <h1 className="text-white text-3xl font-bold">About us</h1>
+              <p className="text-white leading-8">
+                At Impulse Capital & Research Analysis Pvt Ltd, we are dedicated
+                to helping our clients navigate the complex world of venture
+                capital and stock market trading. With a global presence and a
+                team of seasoned financial consultants, we specialize in
+                delivering strategic solutions tailored to meet the unique needs
+                of our clients.
+              </p>
+            </span>
+          </div>
+        </FadeInSection>
+        <FadeInSection>
+          <div className="w-[80%] flex items-center justify-between flex-col gap-4">
+            <span className="flex items-start justify-start flex-col gap-1">
+              <h2 className="text-blackShade font-bold text-2xl">
+                Our Mission
+              </h2>
+              <p className="text-textColor font-normal">
+                Our mission is to empower individuals and businesses to reach
+                new heights through strategic financial insights, cutting-edge
+                market research, and personalized investment solutions. We
+                believe that with the right tools, anyone can succeed in the
+                global financial markets.
+              </p>
+            </span>{" "}
+            <span className="flex items-start justify-start flex-col gap-1">
+              <h2 className="text-blackShade font-bold text-2xl">Our Vision</h2>
+              <p className="text-textColor font-normal">
+                To be a leading force in global financial consulting, guiding
+                entrepreneurs and investors toward a brighter, more prosperous
+                future. We aim to create a positive impact through sustainable
+                investments and responsible financial practices.
+              </p>
+            </span>
+            <img src={aboutus1} alt="aboutus1" className="w-full h-[22rem]" />
+          </div>
+        </FadeInSection>
+        <FadeInSection>
         <div className="w-[80%]  px-[1.5rem] py-[1rem] grid grid-cols-2 gap-4 pt-[2rem] bg-white rounded-md">
           <span className="flex flex-col items-start justify-start gap-4 ">
             <h2 className="text-blackShade font-bold text-2xl">
@@ -129,6 +133,8 @@ function AboutUs() {
             />
           ))}
         </div>
+        </FadeInSection>
+        <FadeInSection>
         <div className="w-[80%]  px-[1.5rem] py-[1rem]  gap-4 pt-[2rem]  rounded-md">
           <div className="grid grid-cols-3">
             <h2 className="text-blackShade font-bold text-2xl">
@@ -153,6 +159,7 @@ function AboutUs() {
             <TemsCard />
           </div>
         </div>
+        </FadeInSection>
       </div>
       <div
         className="w-full flex items-center justify-center flex-col gap-[3rem]  pt-4 h-[45rem]"
@@ -163,29 +170,34 @@ function AboutUs() {
           backgroundPositionY: "bottom",
           backgroundSize: "initial",
           backgroundBlendMode: "hard-light",
+          
         }}
       >
+        <FadeInSection>
         <div className="w-[80%] flex items-start justify-start flex-col gap-4">
           <h2 className="text-blackShade font-bold text-2xl">FAQ!</h2>
         </div>
+        </FadeInSection>
+        <FadeInSection>
         <div className="w-[80%] flex items-center justify-between flex-col gap-4">
-          {AccordionData?.map((item)=>(
-            <AccordionUsage title={item?.title} detail={item?.detail}/>
-
+          {AccordionData?.map((item) => (
+            <AccordionUsage title={item?.title} detail={item?.detail} />
           ))}
-          
         </div>
+        </FadeInSection>
+        <FadeInSection>
         <span className="w-full  flex items-end justify-end pr-[10%] ">
           <a
             href="/Investment Brochure.pdf"
             download={"Investment_Brochure.pdf"}
           >
-            <button className="flex items-senter justify-center gap-1 button bg-green text-white">
+            <button className="flex items-center justify-center gap-1 button bg-green text-white">
               {" "}
-              Pdf Download <FaRegFilePdf />
+              PDF Download <FaRegFilePdf />
             </button>
           </a>
         </span>
+        </FadeInSection>
       </div>
     </>
   );

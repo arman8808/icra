@@ -29,6 +29,7 @@ import Group60 from "../../Assests/Images/Group 60.png";
 import Group61 from "../../Assests/Images/Group 61.png";
 
 import ConatctForm from "../../Components/ConatctForm/ConatctForm";
+import FadeInSection from "../../Utils/FadeInSection/FadeInSection ";
 function Home() {
   const coreValue = [
     {
@@ -66,48 +67,54 @@ function Home() {
     {
       title: "Company Branding Strategic",
       value:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+        "In today's competitive market, having a strong brand identity is essential for success. Our Company Branding Strategy service focuses on creating a distinctive brand that resonates with your target audience. We work closely with you to understand your values, mission, and unique selling points, helping you craft a compelling brand story. ",
       image: Group60,
     },
     {
       title: "Digital Business Workshop",
       value:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  ",
+        "In an increasingly digital world, staying ahead of the curve is crucial. Our Digital Business Workshop is designed to equip your team with the knowledge and tools necessary to thrive in the digital landscape. This hands-on workshop covers essential topics to enhance your digital presence and optimize your business strategies.  ",
       image: Group61,
     },
   ];
   return (
     <>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] bg-background pt-4 relative">
-        <div className="w-[80%] flex items-center justify-between gap-[4rem] relative">
-          <img src={heroImg} alt="heroImg" className="object-contain " />
-          <div className="flex items-start justify-start flex-col gap-[2rem]">
-            <h1 className="text-textColor text-3xl font-bold">
-              ICRA (IMPULSE CAPITAL & RESEARCH ANALYSIS) PRIVATE LTD
-            </h1>
-            <p className="text-textColor text-sm">
-              ICRA (IMPULSE CAPITAL & RESEARCH ANALYSIS) PRIVATE LTD Maximize
-              your investments with our world-class stock trading and venture
-              capital strategies. Get Started
-            </p>
-            <button className="bg-green text-white button">Get Started</button>
+        <FadeInSection className="w-full flex items-center justify-center">
+          <div className="w-[80%] flex items-center justify-between gap-[4rem] relative">
+            <img src={heroImg} alt="heroImg" className="object-contain " />
+            <div className="flex items-start justify-start flex-col gap-[2rem]">
+              <h1 className="text-textColor text-3xl font-bold">
+                ICRA (IMPULSE CAPITAL & RESEARCH ANALYSIS) PRIVATE LTD
+              </h1>
+              <p className="text-textColor text-sm">
+                ICRA (IMPULSE CAPITAL & RESEARCH ANALYSIS) PRIVATE LTD Maximize
+                your investments with our world-class stock trading and venture
+                capital strategies. Get Started
+              </p>
+              <button className="bg-green text-white button">
+                Get Started
+              </button>
+            </div>
+            <img
+              src={greendots}
+              alt="greendots"
+              className="absolute  left-[30%] top-[80%]"
+            />
           </div>
-          <img
-            src={greendots}
-            alt="greendots"
-            className="absolute  left-[30%] top-[80%]"
-          />
-        </div>
-        <div className="w-[80%] flex items-start justify-between gap-4 bg-secondryBackground px-[1.5rem] py-[1rem] flex-col border-t-md">
-          <p className="text-textColor">Trusted by 300+ Clients since 2017</p>
-          <div className="flex items-center justify-between gap-4 w-full">
-            <img src={logo} alt="logo" />
-            <img src={logo1} alt="logo" />
-            <img src={logo3} alt="logo" />
-            <img src={logo4} alt="logo" />
-            <img src={logo5} alt="logo" />
+        </FadeInSection>
+        <FadeInSection>
+          <div className="w-[80%] flex items-start justify-between gap-4 bg-secondryBackground px-[1.5rem] py-[1rem] flex-col border-t-md">
+            <p className="text-textColor">Trusted by 300+ Clients since 2017</p>
+            <div className="flex items-center justify-between gap-4 w-full">
+              <img src={logo} alt="logo" />
+              <img src={logo1} alt="logo" />
+              <img src={logo3} alt="logo" />
+              <img src={logo4} alt="logo" />
+              <img src={logo5} alt="logo" />
+            </div>
           </div>
-        </div>
+        </FadeInSection>
         <img
           src={greendots}
           alt="greendots"
@@ -130,23 +137,26 @@ function Home() {
           backgroundBlendMode: "hard-light",
         }}
       >
-        <div className="w-[80%]  px-[1.5rem] py-[1rem] grid grid-cols-2 gap-4 pt-[2rem]">
-          <span className="flex flex-col items-start justify-start gap-4 ">
-            <h2 className="text-blackShade font-bold text-2xl">
-              Our Core Values
-            </h2>
-            <p className="text-secondTextColor text-sm font-normal">
-              Foundations of Integrity, Trust, and Excellence
-            </p>
-          </span>
-          {coreValue?.map((item) => (
-            <CoreServiceCard
-              title={item?.title}
-              para={item?.value}
-              image={item?.image}
-            />
-          ))}
-        </div>
+        <FadeInSection>
+          <div className="w-[80%]  px-[1.5rem] py-[1rem] grid grid-cols-2 gap-4 pt-[2rem]">
+            <span className="flex flex-col items-start justify-start gap-4 ">
+              <h2 className="text-blackShade font-bold text-2xl">
+                Our Core Values
+              </h2>
+              <p className="text-secondTextColor text-sm font-normal">
+                Foundations of Integrity, Trust, and Excellence
+              </p>
+            </span>
+
+            {coreValue?.map((item) => (
+              <CoreServiceCard
+                title={item?.title}
+                para={item?.value}
+                image={item?.image}
+              />
+            ))}
+          </div>
+        </FadeInSection>
       </div>
       <div
         className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 mb-4  bg-white"
@@ -159,16 +169,22 @@ function Home() {
           backgroundBlendMode: "hard-light",
         }}
       >
-        <div className="w-[80%]  flex flex-col items-start justify-start pt-[2rem]">
-          <h2 className="text-blackShade font-bold text-2xl">
-            What’s Our Services
-          </h2>
-          <div className="w-[100%]  grid grid-cols-2 gap-4 pt-[2rem]">
-            {ourService?.map((item) => (
-              <CoreServiceCard title={item?.title} para={item?.value} image={item?.image}/>
-            ))}
+        <FadeInSection>
+          <div className="w-[80%]  flex flex-col items-start justify-start pt-[2rem]">
+            <h2 className="text-blackShade font-bold text-2xl">
+              What’s Our Services
+            </h2>
+            <div className="w-[100%]  grid grid-cols-2 gap-4 pt-[2rem]">
+              {ourService?.map((item) => (
+                <CoreServiceCard
+                  title={item?.title}
+                  para={item?.value}
+                  image={item?.image}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        </FadeInSection>
       </div>
       <div
         className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]  bg-background"
@@ -187,95 +203,103 @@ function Home() {
             Our Methodology: Turning Ideas into Reality
           </p>
         </span>
-        <div className="w-[80%] flex items-center justify-center flex-col gap-4">
-          <div className="grid grid-cols-2 gap-4 items-center">
-            <span className="flex items-start justify-start flex-col">
-              <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
-                Research and Analysis
-                <img src={one} alt="one" />
-              </h2>
-              <p className="text-secondTextColor">
-                We conduct extensive research and market analysis to identify
-                high-potential investment opportunities. Our team keeps a close
-                watch on the financial landscape, identifying market trends, and
-                assessing risks.
-              </p>
-            </span>
-            <img src={wework} alt="wework" className="w-[90%] rounded-md" />
+        <FadeInSection>
+          <div className="w-[80%] flex items-center justify-center flex-col gap-4">
+            <div className="grid grid-cols-2 gap-4 items-center">
+              <span className="flex items-start justify-start flex-col">
+                <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
+                  Research and Analysis
+                  <img src={one} alt="one" />
+                </h2>
+                <p className="text-secondTextColor">
+                  We conduct extensive research and market analysis to identify
+                  high-potential investment opportunities. Our team keeps a
+                  close watch on the financial landscape, identifying market
+                  trends, and assessing risks.
+                </p>
+              </span>
+              <img src={wework} alt="wework" className="w-[90%] rounded-md" />
+            </div>
+            <div className="grid grid-cols-2 gap-4 items-center">
+              <img src={wework1} alt="wework" className="w-[90%] rounded-md" />
+              <span className="flex items-start justify-start flex-col">
+                <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
+                  Investment and Growth
+                  <img src={two} alt="one" />
+                </h2>
+                <p className="text-secondTextColor">
+                  Based on our research, we strategically invest in early-stage
+                  companies through our venture capital arm, while also engaging
+                  in stock market trading. We focus on balancing risk and reward
+                  to achieve optimal growth.
+                </p>
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-4 items-center">
+              <span className="flex items-start justify-start flex-col">
+                <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
+                  Profit Realization
+                  <img src={three} alt="one" />
+                </h2>
+                <p className="text-secondTextColor">
+                  Through active investment management and continuous analysis,
+                  we ensure our clients realize profitable returns. Our goal is
+                  to maximize returns while minimizing risks.
+                </p>
+              </span>
+              <img src={wework3} alt="wework" className="w-[90%] rounded-md" />
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-4 items-center">
-            <img src={wework1} alt="wework" className="w-[90%] rounded-md" />
-            <span className="flex items-start justify-start flex-col">
-              <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
-                Investment and Growth
-                <img src={two} alt="one" />
-              </h2>
-              <p className="text-secondTextColor">
-                Based on our research, we strategically invest in early-stage
-                companies through our venture capital arm, while also engaging
-                in stock market trading. We focus on balancing risk and reward
-                to achieve optimal growth.
-              </p>
-            </span>
-          </div>
-          <div className="grid grid-cols-2 gap-4 items-center">
-            <span className="flex items-start justify-start flex-col">
-              <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
-                Profit Realization
-                <img src={three} alt="one" />
-              </h2>
-              <p className="text-secondTextColor">
-                Through active investment management and continuous analysis, we
-                ensure our clients realize profitable returns. Our goal is to
-                maximize returns while minimizing risks.
-              </p>
-            </span>
-            <img src={wework3} alt="wework" className="w-[90%] rounded-md" />
-          </div>
-        </div>
+        </FadeInSection>
       </div>
-      <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
-        <div className="w-[80%] grid grid-cols-2 gap-4 pt-[2rem]">
-          <h2 className="text-blackShade font-bold text-2xl">
-            Our amazing portfolio
-          </h2>
-        </div>
-        <div className="w-[80%] grid grid-cols-2 gap-4 pt-[2rem]">
-          <AmazingPortfolioCard
-            title={"Rocket Fuel Payment"}
-            para={
-              "A successful fintech startup we funded through our venture capital arm, achieving 300% growth in under 2 years."
-            }
-          />
-          <span></span>
-          <span></span>
-          <AmazingPortfolioCard
-            image={portfolio}
-            title={"Wearing Smart"}
-            para={
-              "A wearable technology company where our investment contributed to a 250% increase in revenue."
-            }
-          />
+      <FadeInSection>
+        <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
+          <div className="w-[80%] grid grid-cols-2 gap-4 pt-[2rem]">
+            <h2 className="text-blackShade font-bold text-2xl">
+              Our amazing portfolio
+            </h2>
+          </div>
+          <div className="w-[80%] grid grid-cols-2 gap-4 pt-[2rem]">
+            <AmazingPortfolioCard
+              title={"Rocket Fuel Payment"}
+              para={
+                "A successful fintech startup we funded through our venture capital arm, achieving 300% growth in under 2 years."
+              }
+            />
+            <span></span>
+            <span></span>
+            <AmazingPortfolioCard
+              image={portfolio}
+              title={"Wearing Smart"}
+              para={
+                "A wearable technology company where our investment contributed to a 250% increase in revenue."
+              }
+            />
 
-          <AmazingPortfolioCard
-            image={portfolio1}
-            title={"Astro Snappers"}
-            para={
-              "A game-changer in the online learning space, helping them scale globally with strategic funding and business mentorship."
-            }
-          />
+            <AmazingPortfolioCard
+              image={portfolio1}
+              title={"Astro Snappers"}
+              para={
+                "A game-changer in the online learning space, helping them scale globally with strategic funding and business mentorship."
+              }
+            />
+          </div>
         </div>
-      </div>
+      </FadeInSection>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
-        <div className="w-[80%]  flex flex-col items-start justify-start pt-[2rem]">
-          <ConatctForm />
-        </div>
+        <FadeInSection>
+          <div className="w-[80%]  flex flex-col items-start justify-start pt-[2rem]">
+            <ConatctForm />
+          </div>
+        </FadeInSection>
       </div>
 
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
-        <div className="w-[80%]">
-          <GetInTouchCard />
-        </div>
+        <FadeInSection>
+          <div className="w-[80%]">
+            <GetInTouchCard />
+          </div>
+        </FadeInSection>
       </div>
     </>
   );
