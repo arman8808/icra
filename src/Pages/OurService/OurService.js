@@ -16,14 +16,27 @@ import dotsgreen from "../../Assests/Images/Ornament12.png";
 import GetInTouchCard from "../../Components/GetInTouchCard/GetInTouchCard";
 import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard";
 import FadeInSection from "../../Utils/FadeInSection/FadeInSection ";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+import { testimonialData } from "../../TestimonialData";
 
 function OurService() {
+  const responsive = {
+    0: {
+      items: 1,
+    },
+    568: { items: 1 },
+    1024: {
+      items: 2,
+      itemsFit: "contain",
+    },
+  };
   return (
     <>
       {" "}
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] mt-[2rem]  pt-4">
         <FadeInSection>
-          <div className="w-[80%] grid grid-cols-3 gap-[2rem] items-center justify-center">
+          <div className="w-[80%] mobile:w-[90%] grid grid-cols-3 mobile:grid-cols-1 gap-[2rem] items-center justify-center">
             <img src={img} alt="banner" />
             <div className="col-span-2 ">
               <h2 className="text-[#0B2F04] text-2xl font-bold">Our Service</h2>
@@ -37,7 +50,7 @@ function OurService() {
           </div>
         </FadeInSection>
         <FadeInSection>
-          <div className="w-[80%] flex flex-col gap-4 items-start justify-start">
+          <div className="w-[80%] mobile:w-[90%] flex flex-col gap-4 items-start justify-start">
             <h2 className="text-4xl font-extraBold text-[#413939]">
               What our business do
             </h2>
@@ -49,7 +62,7 @@ function OurService() {
           </div>
         </FadeInSection>
         <FadeInSection>
-          <div className="w-[80%] flex  gap-4 items-start justify-start ">
+          <div className="w-[80%]  mobile:w-[90%] flex  gap-4 items-start mobile:grid mobile:grid-cols-1 mobile:items-start justify-start ">
             <BusinessCard
               image={icon3}
               para={
@@ -62,10 +75,18 @@ function OurService() {
                 "Strategic Market Research: Our deep analysis and data-driven approach ensure that you receive the best advice on current market trends, opportunities, and risks."
               }
             />
+            <span className="hidden mobile:flex">
+              <BusinessCard
+                image={icon5}
+                para={
+                  "Venture Capital Consulting: Our team works closely with startups and established businesses to secure venture capital funding, guiding them through every step of the process."
+                }
+              />
+            </span>
           </div>
         </FadeInSection>
         <FadeInSection>
-          <div className="w-[40%] flex  gap-4 items-center justify-center ">
+          <div className="w-[40%] mobile:w-[90%] flex  gap-4 items-center justify-center mobile:hidden ">
             <BusinessCard
               image={icon5}
               para={
@@ -74,14 +95,14 @@ function OurService() {
             />
           </div>
         </FadeInSection>
-        <div className="w-[80%] flex  gap-[2.5rem] items-start justify-start flex-col bg-white py-[3%] px-[5%] mt-[2rem] rounded-md">
+        <div className="w-[80%] mobile:w-[90%] flex  gap-[2.5rem] items-start justify-start flex-col bg-white py-[3%] px-[5%] mt-[2rem] rounded-md">
           <span className="flex items-center justify-center flex-col w-full">
             <h2 className="text-[#0B2F04] text-2xl font-bold">How it Works</h2>
             <p className="text-[#5B5A78] font-bold">
               We follow a structured approach to ensure your success:
             </p>
           </span>
-          <div className="w-full grid grid-cols-3 gap-4">
+          <div className="w-full grid grid-cols-3 mobile:grid-cols-1 gap-4">
             <div className="flex items-center justify-center gap-3 flex-col">
               <img src={icon} alt="placeHolder" />
               <h6 className="text-center text-[#38386E] font-semiBold">
@@ -117,7 +138,7 @@ function OurService() {
           </div>
         </div>
         <FadeInSection>
-          <div className="w-[80%]   gap-[2rem] grid grid-cols-3  bg-white py-[2%] px-[2%] mt-[2rem] rounded-3xl relative">
+          <div className="w-[80%] mobile:w-[90%]  gap-[2rem] grid grid-cols-3 mobile:grid-cols-1 bg-white py-[2%] px-[2%] mt-[2rem] rounded-3xl relative">
             <img src={Group} alt="Group" className="object-cover" />
             <div className="col-span-2 flex items-start justify-start gap-2 flex-col pl-[5%]">
               <h2 className="text-[#0B2F04] text-3xl font-bold">
@@ -164,10 +185,27 @@ function OurService() {
             </h2>
           </FadeInSection>
           <FadeInSection>
-            <div className="w-full grid grid-cols-3 gap-4">
-              <TestimonialCard />
-              <TestimonialCard />
-              <TestimonialCard />
+            <div className="w-full grid grid-cols-1 py-4 gap-4">
+              <AliceCarousel
+                responsive={responsive}
+                disableDotsControls={true}
+                disableButtonsControls={true}
+                autoPlay={true}
+                autoPlayInterval={4000}
+                infinite={true}
+                mouseTracking
+                itemPadding={[0, 50]}
+                className="w-full gap-4"
+              >
+                {testimonialData?.map((item) => (
+                  <TestimonialCard
+                    key={item?.Name}
+                    Name={item?.Name}
+                    Designation={item?.Designation}
+                    FeedBack={item?.FeedBack}
+                  />
+                ))}
+              </AliceCarousel>
             </div>
           </FadeInSection>
         </div>
@@ -184,7 +222,7 @@ function OurService() {
       </div>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem] relative">
         <FadeInSection>
-          <div className="w-[80%]">
+          <div className="w-[80%] mobile:w-[90%]">
             <GetInTouchCard />
           </div>
         </FadeInSection>

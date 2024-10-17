@@ -4,10 +4,11 @@ import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { CiMail } from "react-icons/ci";
 import { FaPlay, FaRegCopyright } from "react-icons/fa";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="mt-[2rem] flex items-center justify-center flex-col gap-4 px-[5%] py-[2%]">
-      <div className="w-full grid grid-cols-4">
+      <div className="w-full grid grid-cols-4 mobile:grid-cols-1 gap-4">
         <div className="flex flex-col items-start justify-start gap-3">
           <img src={logo} alt="logo" />
           <span className="flex items-center justify-start gap-2 cursor-pointer">
@@ -19,11 +20,15 @@ function Footer() {
           </span>{" "}
           <span className="flex items-center justify-start gap-2 cursor-pointer">
             <MdOutlinePhoneInTalk className="text-2xl text-footerText" />
-            <p className="text-footerText">11111111</p>
+            <Link to="tel:11111111">
+              <p className="text-footerText">11111111</p>
+            </Link>
           </span>{" "}
           <span className="flex items-center justify-start gap-2 cursor-pointer">
             <CiMail className="text-2xl text-footerText" />
-            <p className="text-footerText">Info@icraind.com</p>
+            <Link to="mailto:Info@icraind.com">
+              <p className="text-footerText">Info@icraind.com</p>
+            </Link>
           </span>
         </div>
         <div className="flex items-start justify-start flex-col gap-3">

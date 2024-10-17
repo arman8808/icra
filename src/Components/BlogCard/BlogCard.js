@@ -3,7 +3,7 @@ import img from "../../Assests/Images/Container.png";
 import { Link } from "react-router-dom";
 function BlogCard({ image, title, subDec }) {
   return (
-    <div className="w-[30rem] flex flex-col gap-3">
+    <div className="w-[30rem] mobile:w-[90%] flex flex-col gap-3">
       <img
         src={image ? image : img}
         alt="blog banner"

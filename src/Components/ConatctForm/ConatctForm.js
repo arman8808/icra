@@ -4,7 +4,7 @@ import { FaInstagram } from "react-icons/fa6";
 
 function ConatctForm() {
   return (
-    <div className="w-full grid grid-cols-3 gap-4">
+    <div className="w-full grid grid-cols-3 mobile:grid-cols-1 gap-4 bg-white p-4">
       <div className="flex items-start justify-start flex-col gap-[2rem]">
         <h2 className="text-blackShade font-bold text-2xl">
           Let’s Talk About :
@@ -26,7 +26,7 @@ function ConatctForm() {
           love to know what you’re thinking
         </p>
         <form className="w-full">
-          <div className="w-full grid grid-cols-2 gap-4">
+          <div className="w-full grid grid-cols-2 mobile:grid-cols-1 gap-4">
           <span className="w-full flex items-start justify-start gap-1 flex-col">
               <p className="font-semiBold ">First Name</p>
               <input
@@ -65,7 +65,7 @@ function ConatctForm() {
             </span>{" "}
 
           </div>
-          <span className="w-full flex items-start justify-start mt-3 gap-1 flex-col">
+          <span className="w-full flex items-start justify-start  mt-3 gap-1 flex-col">
               <p className="font-semiBold ">Messages</p>
               <textarea
                rows='5'

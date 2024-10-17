@@ -27,9 +27,14 @@ import Group58 from "../../Assests/Images/Group 58.png";
 import Group59 from "../../Assests/Images/Group 59.png";
 import Group60 from "../../Assests/Images/Group 60.png";
 import Group61 from "../../Assests/Images/Group 61.png";
-
 import ConatctForm from "../../Components/ConatctForm/ConatctForm";
 import FadeInSection from "../../Utils/FadeInSection/FadeInSection ";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+import { testimonialData } from "../../TestimonialData";
+import dots from "../../Assests/Images/Ornament11.png";
+import dots1 from "../../Assests/Images/Ornament (1).png";
+import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard";
 function Home() {
   const coreValue = [
     {
@@ -77,11 +82,21 @@ function Home() {
       image: Group61,
     },
   ];
+  const responsive = {
+    0: {
+      items: 1,
+    },
+    568: { items: 1 },
+    1024: {
+      items: 2,
+      itemsFit: "contain",
+    },
+  };
   return (
     <>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] bg-background pt-4 relative">
         <FadeInSection className="w-full flex items-center justify-center">
-          <div className="w-[80%] flex items-center justify-between gap-[4rem] relative">
+          <div className="w-[80%] mobile:w-[90%] flex items-center justify-between gap-[4rem] mobile:flex-col tablet:flex-col relative">
             <img src={heroImg} alt="heroImg" className="object-contain " />
             <div className="flex items-start justify-start flex-col gap-[2rem]">
               <h1 className="text-textColor text-3xl font-bold">
@@ -99,14 +114,14 @@ function Home() {
             <img
               src={greendots}
               alt="greendots"
-              className="absolute  left-[30%] top-[80%]"
+              className="absolute  left-[30%] top-[80%] mobile:hidden"
             />
           </div>
         </FadeInSection>
         <FadeInSection>
-          <div className="w-[80%] flex items-start justify-between gap-4 bg-secondryBackground px-[1.5rem] py-[1rem] flex-col border-t-md">
+          <div className="w-[80%] mobile:w-[90%] flex items-start justify-between gap-4 bg-secondryBackground px-[1.5rem] py-[1rem] flex-col border-t-md">
             <p className="text-textColor">Trusted by 300+ Clients since 2017</p>
-            <div className="flex items-center justify-between gap-4 w-full">
+            <div className="flex items-center justify-between mobile:grid mobile:grid-cols-2 tablet:grid tablet:grid-cols-3 gap-4 w-full">
               <img src={logo} alt="logo" />
               <img src={logo1} alt="logo" />
               <img src={logo3} alt="logo" />
@@ -138,7 +153,7 @@ function Home() {
         }}
       >
         <FadeInSection>
-          <div className="w-[80%]  px-[1.5rem] py-[1rem] grid grid-cols-2 gap-4 pt-[2rem]">
+          <div className="w-[80%] mobile:w-[90%]  px-[1.5rem] py-[1rem] grid grid-cols-2 mobile:grid-cols-1 mobile:w-[90%] gap-4 pt-[2rem]">
             <span className="flex flex-col items-start justify-start gap-4 ">
               <h2 className="text-blackShade font-bold text-2xl">
                 Our Core Values
@@ -170,11 +185,11 @@ function Home() {
         }}
       >
         <FadeInSection>
-          <div className="w-[80%]  flex flex-col items-start justify-start pt-[2rem]">
+          <div className="w-[80%] mobile:w-[90%]  flex flex-col items-start justify-start pt-[2rem]">
             <h2 className="text-blackShade font-bold text-2xl">
               What’s Our Services
             </h2>
-            <div className="w-[100%]  grid grid-cols-2 gap-4 pt-[2rem]">
+            <div className="w-[100%]  grid grid-cols-2 mobile:grid-cols-1 gap-4 pt-[2rem]">
               {ourService?.map((item) => (
                 <CoreServiceCard
                   title={item?.title}
@@ -204,9 +219,9 @@ function Home() {
           </p>
         </span>
         <FadeInSection>
-          <div className="w-[80%] flex items-center justify-center flex-col gap-4">
-            <div className="grid grid-cols-2 gap-4 items-center">
-              <span className="flex items-start justify-start flex-col">
+          <div className="w-[80%] mobile:w-[90%] flex items-center justify-center flex-col gap-4">
+            <div className="grid grid-cols-2 mobile:grid-cols-1 gap-4 items-center">
+              <span className="flex items-start justify-start flex-col mobile:order-last">
                 <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
                   Research and Analysis
                   <img src={one} alt="one" />
@@ -220,7 +235,7 @@ function Home() {
               </span>
               <img src={wework} alt="wework" className="w-[90%] rounded-md" />
             </div>
-            <div className="grid grid-cols-2 gap-4 items-center">
+            <div className="grid grid-cols-2 gap-4 mobile:grid-cols-1 items-center">
               <img src={wework1} alt="wework" className="w-[90%] rounded-md" />
               <span className="flex items-start justify-start flex-col">
                 <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
@@ -235,8 +250,8 @@ function Home() {
                 </p>
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-4 items-center">
-              <span className="flex items-start justify-start flex-col">
+            <div className="grid grid-cols-2 mobile:grid-cols-1 gap-4 items-center">
+              <span className="flex items-start justify-start flex-col mobile:order-last">
                 <h2 className="text-blackShade font-bold text-2xl flex items-start justify-start">
                   Profit Realization
                   <img src={three} alt="one" />
@@ -254,12 +269,12 @@ function Home() {
       </div>
       <FadeInSection>
         <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
-          <div className="w-[80%] grid grid-cols-2 gap-4 pt-[2rem]">
+          <div className="w-[80%] mobile:w-[90%] grid grid-cols-2 mobile:grid-cols-1 gap-4 pt-[2rem]">
             <h2 className="text-blackShade font-bold text-2xl">
               Our amazing portfolio
             </h2>
           </div>
-          <div className="w-[80%] grid grid-cols-2 gap-4 pt-[2rem]">
+          <div className="w-[80%] grid grid-cols-2 mobile:grid-cols-1 gap-4 pt-[2rem]">
             <AmazingPortfolioCard
               title={"Rocket Fuel Payment"}
               para={
@@ -288,15 +303,57 @@ function Home() {
       </FadeInSection>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
         <FadeInSection>
-          <div className="w-[80%]  flex flex-col items-start justify-start pt-[2rem]">
+          <div className="w-[80%] mobile:w-[90%]  flex flex-col items-start justify-start pt-[2rem]">
             <ConatctForm />
           </div>
         </FadeInSection>
       </div>
-
+      <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[4rem] mt-[3rem] bg-custom-gradient relative">
+        <div className="w-[80%] flex items-start justify-start flex-col gap-4">
+          <FadeInSection>
+            <h2 className="text-white text-2xl font-bold">
+              See what our client say about us
+            </h2>
+          </FadeInSection>
+          <FadeInSection>
+            <div className="w-full grid grid-cols-1 py-4 gap-4">
+              <AliceCarousel
+                responsive={responsive}
+                disableDotsControls={true}
+                disableButtonsControls={true}
+                autoPlay={true}
+                autoPlayInterval={4000}
+                infinite={true}
+                mouseTracking
+                itemPadding={[0, 50]}
+                className="w-full gap-4"
+              >
+                {testimonialData?.map((item) => (
+                  <TestimonialCard
+                    key={item?.Name}
+                    Name={item?.Name}
+                    Designation={item?.Designation}
+                    FeedBack={item?.FeedBack}
+                  />
+                ))}
+              </AliceCarousel>
+            </div>
+          </FadeInSection>
+        </div>
+        <img
+          src={dots}
+          alt="dots"
+          className="absolute left-0 h-[5rem] object-cover"
+        />
+        <img
+          src={dots1}
+          alt="dots"
+          className="absolute top-0 h-[5rem] object-cover"
+        />
+      </div>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
         <FadeInSection>
-          <div className="w-[80%]">
+          <div className="w-[80%] mobile:w-[90%]">
             <GetInTouchCard />
           </div>
         </FadeInSection>

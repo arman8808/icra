@@ -3,7 +3,7 @@ import BlogCard from "../../Components/BlogCard/BlogCard";
 import { blogData } from "../../blogData";
 function Blog() {
   return (
-    <div className="w-full flex items-center justify-center flex-col gap-[3rem] mt-[2rem]  pt-4 ">
+    <div className="w-full  flex items-center justify-center flex-col gap-[3rem] mt-[2rem]  pt-4 ">
       <span className="flex items-center justify-center flex-col gap-1">
         <h1 className="text-blackShade text-3xl font-bold"> Blog</h1>
         <p className="text-textColor font-normal w-[70%] text-center">
