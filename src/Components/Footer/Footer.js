@@ -33,8 +33,8 @@ function Footer() {
         </div>
         <div className="flex items-start justify-start flex-col gap-3">
           <h6>Services</h6>
-          <p className="text-footerText">Startup Analyst</p>
-          <p className="text-footerText">Enterprise Product Analyst</p>
+          <p className="text-footerText">Venture Capital</p>
+          <p className="text-footerText">Stock Market Training & Trading</p>
           <p className="text-footerText">Company Branding Strategic</p>
           <p className="text-footerText">Digital Business Workshop</p>
         </div>
