@@ -90,7 +90,7 @@ function AboutUs() {
           </div>
         </FadeInSection>
         <FadeInSection>
-          <div className="w-[80%] mobile:w-[90%] flex items-center justify-between flex-col gap-4">
+          <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-center justify-between flex-col gap-4">
             <span className="flex items-start justify-start flex-col gap-1">
               <h2 className="text-blackShade font-bold text-2xl">
                 Our Mission
@@ -116,7 +116,7 @@ function AboutUs() {
           </div>
         </FadeInSection>
         <FadeInSection>
-        <div className="w-[80%] mobile:w-[90%]  px-[1.5rem] py-[1rem] grid grid-cols-2 gap-4 pt-[2rem] bg-white rounded-md mobile:grid-cols-1">
+        <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] px-[1.5rem] py-[1rem] grid grid-cols-2 gap-4 pt-[2rem] bg-white rounded-md mobile:grid-cols-1">
           <span className="flex flex-col items-start justify-start gap-4 ">
             <h2 className="text-blackShade font-bold text-2xl">
               Our Core Values
@@ -135,7 +135,7 @@ function AboutUs() {
         </div>
         </FadeInSection>
         <FadeInSection>
-        <div className="w-[80%] mobile:w-[90%]  px-[1.5rem] py-[1rem]  gap-4 pt-[2rem]  rounded-md">
+        <div className="w-[80%] mobile:w-[90%] tablet:w-[90%]  px-[1.5rem] py-[1rem]  gap-4 pt-[2rem]  rounded-md">
           <div className="grid grid-cols-3 mobile:grid-cols-1">
             <h2 className="text-blackShade font-bold text-2xl">
               Our Special Teams
@@ -147,7 +147,7 @@ function AboutUs() {
               investments grow in a safe and sustainable manner.
             </p>
           </div>
-          <div className="grid grid-cols-3 mobile:grid-cols-1 pt-[1.5rem] gap-4">
+          <div className="grid grid-cols-3 mobile:grid-cols-1 tablet:grid-cols-2 pt-[1.5rem] gap-4">
             <TemsCard />
             <TemsCard />
             <TemsCard />
@@ -174,12 +174,12 @@ function AboutUs() {
         }}
       >
         <FadeInSection>
-        <div className="w-[80%] mobile:w-[90%] flex items-start justify-start flex-col gap-4">
+        <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-start justify-start flex-col gap-4">
           <h2 className="text-blackShade font-bold text-2xl">FAQ!</h2>
         </div>
         </FadeInSection>
         <FadeInSection>
-        <div className="w-[80%] mobile:w-[90%] flex items-center justify-between flex-col gap-4">
+        <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-center justify-between flex-col gap-4">
           {AccordionData?.map((item) => (
             <AccordionUsage title={item?.title} detail={item?.detail} />
           ))}

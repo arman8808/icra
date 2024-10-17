@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="mt-[2rem] flex items-center justify-center flex-col gap-4 px-[5%] py-[2%]">
-      <div className="w-full grid grid-cols-4 mobile:grid-cols-1 gap-4">
+      <div className="w-full grid grid-cols-4 mobile:grid-cols-1 tablet:grid-cols-2 md:grid-cols-3 gap-4">
         <div className="flex flex-col items-start justify-start gap-3">
           <img src={logo} alt="logo" />
           <span className="flex items-center justify-start gap-2 cursor-pointer">

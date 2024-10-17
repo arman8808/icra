@@ -114,14 +114,14 @@ function Home() {
             <img
               src={greendots}
               alt="greendots"
-              className="absolute  left-[30%] top-[80%] mobile:hidden"
+              className="absolute  left-[30%] top-[80%] mobile:hidden tablet:hidden"
             />
           </div>
         </FadeInSection>
         <FadeInSection>
           <div className="w-[80%] mobile:w-[90%] flex items-start justify-between gap-4 bg-secondryBackground px-[1.5rem] py-[1rem] flex-col border-t-md">
             <p className="text-textColor">Trusted by 300+ Clients since 2017</p>
-            <div className="flex items-center justify-between mobile:grid mobile:grid-cols-2 tablet:grid tablet:grid-cols-3 gap-4 w-full">
+            <div className="flex items-center justify-between mobile:grid mobile:grid-cols-2 tablet:grid tablet:grid-cols-3 md:grid md:grid-cols-3 gap-4 w-full">
               <img src={logo} alt="logo" />
               <img src={logo1} alt="logo" />
               <img src={logo3} alt="logo" />
