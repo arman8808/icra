@@ -35,6 +35,7 @@ import { testimonialData } from "../../TestimonialData";
 import dots from "../../Assests/Images/Ornament11.png";
 import dots1 from "../../Assests/Images/Ornament (1).png";
 import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard";
+import { useNavigate } from "react-router-dom";
 function Home() {
   const coreValue = [
     {
@@ -92,6 +93,7 @@ function Home() {
       itemsFit: "contain",
     },
   };
+  const history=useNavigate()
   return (
     <>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] bg-background pt-4 relative">
@@ -107,7 +109,7 @@ function Home() {
                 your investments with our world-class stock trading and venture
                 capital strategies. Get Started
               </p>
-              <button className="bg-green text-white button">
+              <button className="bg-green text-white button" onClick={()=>history('/contactUs')}>
                 Get Started
               </button>
             </div>
