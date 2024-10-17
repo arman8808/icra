@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import heroImg from "../../Assests/Images/Image Placeholder.png";
 import logo from "../../Assests/Images/logo 1.png";
 import logo1 from "../../Assests/Images/logo 2.png";
@@ -36,6 +36,7 @@ import dots from "../../Assests/Images/Ornament11.png";
 import dots1 from "../../Assests/Images/Ornament (1).png";
 import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard";
 import { useNavigate } from "react-router-dom";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 function Home() {
   const coreValue = [
     {
@@ -87,13 +88,30 @@ function Home() {
     0: {
       items: 1,
     },
-    568: { items: 1 },
-    1024: {
+    568: {
+      items: 1,
+    },
+    720: {
       items: 2,
+    },
+    1024: {
+      items: 3,
       itemsFit: "contain",
     },
   };
   const history=useNavigate()
+  const carouselRef = useRef(null);
+  const slideNext = () => {
+    if (carouselRef.current) {
+      carouselRef.current.slideNext(); // Check if ref is defined
+    }
+  };
+
+  const slidePrev = () => {
+    if (carouselRef.current) {
+      carouselRef.current.slidePrev(); // Check if ref is defined
+    }
+  };
   return (
     <>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] bg-background pt-4 relative">
@@ -311,15 +329,34 @@ function Home() {
         </FadeInSection>
       </div>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[4rem] mt-[3rem] bg-custom-gradient relative">
-        <div className="w-[80%] flex items-start justify-start flex-col gap-4">
+        <div className="w-[80%] flex items-start justify-start flex-col gap-4 py-4">
           <FadeInSection>
-            <h2 className="text-white text-2xl font-bold">
+            <h2 className="w-full text-white text-start text-2xl font-bold">
               See what our client say about us
             </h2>
           </FadeInSection>
           <FadeInSection>
             <div className="w-full grid grid-cols-1 py-4 gap-4">
+            <span className="w-[80%] flex items-center justify-end gap-1">
+              {" "}
+              <button
+                className="  px-2 py-2 rounded-full transform -translate-y-1/2 bg-gray-500 text-white hover:bg-[#27820C]"
+                onClick={slidePrev} // Call the slidePrev function
+              >
+                <IoIosArrowBack  className="text-2xl font-bold"/> 
+              </button>
+              <button
+                className="  px-2 py-2 rounded-full transform -translate-y-1/2 bg-gray-500 text-white hover:bg-[#27820C]" 
+                onClick={slideNext} // Call the slideNext function
+              >
+                <IoIosArrowForward  className="text-2xl font-bold"/>
+              </button>
+              {/* Custom Previous Button */}
+           
+            </span>
+            <div className="w-full grid grid-cols-1 py-4 gap-4">
               <AliceCarousel
+                ref={carouselRef}
                 responsive={responsive}
                 disableDotsControls={true}
                 disableButtonsControls={true}
@@ -339,6 +376,7 @@ function Home() {
                   />
                 ))}
               </AliceCarousel>
+            </div>
             </div>
           </FadeInSection>
         </div>
