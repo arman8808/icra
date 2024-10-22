@@ -11,6 +11,8 @@ import Group57 from "../../Assests/Images/Group 57.png";
 
 import { FaRegFilePdf } from "react-icons/fa";
 import FadeInSection from "../../Utils/FadeInSection/FadeInSection ";
+import syed from "../../Assests/Images/WhatsApp Image 2024-10-22 at 10.58.36 AM 2.png";
+import tablib from "../../Assests/Images/WhatsApp Image 2024-10-22 at 10.58.36 AM 1.png";
 
 function AboutUs() {
   const coreValue = [
@@ -112,53 +114,62 @@ function AboutUs() {
                 investments and responsible financial practices.
               </p>
             </span>
-            <img src={aboutus1} alt="aboutus1" className="w-full h-[22rem] mobile:object-cover" />
-          </div>
-        </FadeInSection>
-        <FadeInSection>
-        <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] px-[1.5rem] py-[1rem] grid grid-cols-2 gap-4 pt-[2rem] bg-white rounded-md mobile:grid-cols-1">
-          <span className="flex flex-col items-start justify-start gap-4 ">
-            <h2 className="text-blackShade font-bold text-2xl">
-              Our Core Values
-            </h2>
-            <p className="text-secondTextColor text-sm font-normal">
-              Foundations of Integrity, Trust, and Excellence
-            </p>
-          </span>
-          {coreValue?.map((item) => (
-            <CoreServiceCard
-              title={item?.title}
-              para={item?.value}
-              image={item?.image}
+            <img
+              src={aboutus1}
+              alt="aboutus1"
+              className="w-full h-[22rem] mobile:object-cover"
             />
-          ))}
-        </div>
+          </div>
         </FadeInSection>
         <FadeInSection>
-        <div className="w-[80%] mobile:w-[90%] tablet:w-[90%]  px-[1.5rem] py-[1rem]  gap-4 pt-[2rem]  rounded-md">
-          <div className="grid grid-cols-3 mobile:grid-cols-1">
-            <h2 className="text-blackShade font-bold text-2xl">
-              Our Special Teams
-            </h2>
-            <p className="col-span-2 text-secondTextColor text-sm font-normal">
-              Our team of experts brings together years of experience in
-              financial consulting, venture capital, and stock market analysis.
-              We work collaboratively with our clients to ensure their
-              investments grow in a safe and sustainable manner.
-            </p>
+          <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] px-[1.5rem] py-[1rem] grid grid-cols-2 gap-4 pt-[2rem] bg-white rounded-md mobile:grid-cols-1">
+            <span className="flex flex-col items-start justify-start gap-4 ">
+              <h2 className="text-blackShade font-bold text-2xl">
+                Our Core Values
+              </h2>
+              <p className="text-secondTextColor text-sm font-normal">
+                Foundations of Integrity, Trust, and Excellence
+              </p>
+            </span>
+            {coreValue?.map((item) => (
+              <CoreServiceCard
+                title={item?.title}
+                para={item?.value}
+                image={item?.image}
+              />
+            ))}
           </div>
-          <div className="grid grid-cols-3 mobile:grid-cols-1 tablet:grid-cols-2 pt-[1.5rem] gap-4">
-            <TemsCard />
-            <TemsCard />
-            <TemsCard />
-            <TemsCard />
-            <TemsCard />
-            <TemsCard />
-            <TemsCard />
-            <TemsCard />
-            <TemsCard />
+        </FadeInSection>
+        <FadeInSection>
+          <div className="w-[80%] mobile:w-[90%] tablet:w-[90%]  px-[1.5rem] py-[1rem]  gap-4 pt-[2rem]  rounded-md">
+            <div className="grid grid-cols-3 mobile:grid-cols-1">
+              <h2 className="text-blackShade font-bold text-2xl">
+                Our Special Teams
+              </h2>
+              <p className="col-span-2 text-secondTextColor text-sm font-normal">
+                Our team of experts brings together years of experience in
+                financial consulting, venture capital, and stock market
+                analysis. We work collaboratively with our clients to ensure
+                their investments grow in a safe and sustainable manner.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 mobile:grid-cols-1 tablet:grid-cols-2 pt-[1.5rem] gap-4">
+              <TemsCard
+                Name={"SYED MUHAMMAD AKBAR"}
+                image={syed}
+                Designation={"Director"}
+                Education={"Post Gradute"}
+                Expereince={"10 years of extensive experience in the financial domain."}
+              />
+              <TemsCard
+                Name={"MOHD TALIB AZIZ"}
+                image={tablib}
+                Designation={"Director"}
+                Education={"Post Gradute"}
+                Expereince={"15 years of extensive experience in financial modeling, research, and analytics."}
+              />
+            </div>
           </div>
-        </div>
         </FadeInSection>
       </div>
       <div
@@ -170,33 +181,32 @@ function AboutUs() {
           backgroundPositionY: "bottom",
           backgroundSize: "initial",
           backgroundBlendMode: "hard-light",
-          
         }}
       >
         <FadeInSection>
-        <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-start justify-start flex-col gap-4">
-          <h2 className="text-blackShade font-bold text-2xl">FAQ!</h2>
-        </div>
+          <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-start justify-start flex-col gap-4">
+            <h2 className="text-blackShade font-bold text-2xl">FAQ!</h2>
+          </div>
         </FadeInSection>
         <FadeInSection>
-        <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-center justify-between flex-col gap-4">
-          {AccordionData?.map((item) => (
-            <AccordionUsage title={item?.title} detail={item?.detail} />
-          ))}
-        </div>
+          <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-center justify-between flex-col gap-4">
+            {AccordionData?.map((item) => (
+              <AccordionUsage title={item?.title} detail={item?.detail} />
+            ))}
+          </div>
         </FadeInSection>
         <FadeInSection>
-        <span className="w-full  flex items-end justify-end pr-[10%] ">
-          <a
-            href="/Investment Brochure.pdf"
-            download={"Investment_Brochure.pdf"}
-          >
-            <button className="flex items-center justify-center gap-1 button bg-green text-white">
-              {" "}
-              PDF Download <FaRegFilePdf />
-            </button>
-          </a>
-        </span>
+          <span className="w-full  flex items-end justify-end pr-[10%] ">
+            <a
+              href="/Investment Brochure.pdf"
+              download={"Investment_Brochure.pdf"}
+            >
+              <button className="flex items-center justify-center gap-1 button bg-green text-white">
+                {" "}
+                PDF Download <FaRegFilePdf />
+              </button>
+            </a>
+          </span>
         </FadeInSection>
       </div>
     </>

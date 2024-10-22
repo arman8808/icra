@@ -12,16 +12,23 @@ function Footer() {
         <div className="flex flex-col items-start justify-start gap-3">
           <img src={logo} alt="logo" />
           <span className="flex items-center justify-start gap-2 cursor-pointer">
-            <IoLocationOutline className="text-2xl text-footerText" />
+            <IoLocationOutline className="text-4xl text-footerText" />
             <p className="text-footerText">
               Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai,
               U.A.E.
             </p>
           </span>{" "}
           <span className="flex items-center justify-start gap-2 cursor-pointer">
+            <IoLocationOutline className="text-4xl text-footerText" />
+            <p className="text-footerText">
+              Old House No.68,maqbara, Hazrat Gunj,lucknow, Lalbagh (lucknow),
+              Lucknow, Lucknow, Uttar Pradesh, India,
+            </p>
+          </span>{" "}
+          <span className="flex items-center justify-start gap-2 cursor-pointer">
             <MdOutlinePhoneInTalk className="text-2xl text-footerText" />
-            <Link to="tel:11111111">
-              <p className="text-footerText">11111111</p>
+            <Link to="tel:8601299016">
+              <p className="text-footerText">8601299016</p>
             </Link>
           </span>{" "}
           <span className="flex items-center justify-start gap-2 cursor-pointer">
