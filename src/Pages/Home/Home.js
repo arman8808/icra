@@ -37,6 +37,8 @@ import dots1 from "../../Assests/Images/Ornament (1).png";
 import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import impleglobal from "../../Assests/Images/impleglobal.png";
+import MainLogoImg from "../../Assests/Images/MainLogoImg.png";
 function Home() {
   const coreValue = [
     {
@@ -99,7 +101,7 @@ function Home() {
       itemsFit: "contain",
     },
   };
-  const history=useNavigate()
+  const history = useNavigate();
   const carouselRef = useRef(null);
   const slideNext = () => {
     if (carouselRef.current) {
@@ -127,7 +129,10 @@ function Home() {
                 your investments with our world-class stock trading and venture
                 capital strategies. Get Started
               </p>
-              <button className="bg-green text-white button" onClick={()=>history('/contactUs')}>
+              <button
+                className="bg-green text-white button"
+                onClick={() => history("/contactUs")}
+              >
                 Get Started
               </button>
             </div>
@@ -141,12 +146,23 @@ function Home() {
         <FadeInSection>
           <div className="w-[80%] mobile:w-[90%] flex items-start justify-between gap-4 bg-secondryBackground px-[1.5rem] py-[1rem] flex-col border-t-md">
             <p className="text-textColor">Trusted by 300+ Clients since 2017</p>
-            <div className="flex items-center justify-between mobile:grid mobile:grid-cols-2 tablet:grid tablet:grid-cols-3 md:grid md:grid-cols-3 gap-4 w-full">
-              <img src={logo} alt="logo" />
-              <img src={logo1} alt="logo" />
-              <img src={logo3} alt="logo" />
+            <div className="flex items-center justify-start gap-[2rem] mobile:grid mobile:grid-cols-2 tablet:grid tablet:grid-cols-3 md:grid md:grid-cols-3 gap-4 w-full">
+            <img
+                src={MainLogoImg}
+                alt="logo"
+                className="h-[8rem] object-contain"
+                style={{ aspectRatio: "1 / 1" }}
+              />
+              <img
+                src={impleglobal}
+                alt="logo"
+                className="h-[8rem] object-contain"
+                style={{ aspectRatio: "1 / 1" }}
+              />
+            
+              {/* <img src={logo3} alt="logo" />
               <img src={logo4} alt="logo" />
-              <img src={logo5} alt="logo" />
+              <img src={logo5} alt="logo" /> */}
             </div>
           </div>
         </FadeInSection>
@@ -337,46 +353,45 @@ function Home() {
           </FadeInSection>
           <FadeInSection>
             <div className="w-full grid grid-cols-1 py-4 gap-4">
-            <span className="w-[80%] flex items-center justify-end gap-1">
-              {" "}
-              <button
-                className="  px-2 py-2 rounded-full transform -translate-y-1/2 bg-gray-500 text-white hover:bg-[#27820C]"
-                onClick={slidePrev} // Call the slidePrev function
-              >
-                <IoIosArrowBack  className="text-2xl font-bold"/> 
-              </button>
-              <button
-                className="  px-2 py-2 rounded-full transform -translate-y-1/2 bg-gray-500 text-white hover:bg-[#27820C]" 
-                onClick={slideNext} // Call the slideNext function
-              >
-                <IoIosArrowForward  className="text-2xl font-bold"/>
-              </button>
-              {/* Custom Previous Button */}
-           
-            </span>
-            <div className="w-full grid grid-cols-1 py-4 gap-4">
-              <AliceCarousel
-                ref={carouselRef}
-                responsive={responsive}
-                disableDotsControls={true}
-                disableButtonsControls={true}
-                autoPlay={true}
-                autoPlayInterval={4000}
-                infinite={true}
-                mouseTracking
-                itemPadding={[0, 50]}
-                className="w-full gap-4"
-              >
-                {testimonialData?.map((item) => (
-                  <TestimonialCard
-                    key={item?.Name}
-                    Name={item?.Name}
-                    Designation={item?.Designation}
-                    FeedBack={item?.FeedBack}
-                  />
-                ))}
-              </AliceCarousel>
-            </div>
+              <span className="w-[80%] flex items-center justify-end gap-1">
+                {" "}
+                <button
+                  className="  px-2 py-2 rounded-full transform -translate-y-1/2 bg-gray-500 text-white hover:bg-[#27820C]"
+                  onClick={slidePrev} // Call the slidePrev function
+                >
+                  <IoIosArrowBack className="text-2xl font-bold" />
+                </button>
+                <button
+                  className="  px-2 py-2 rounded-full transform -translate-y-1/2 bg-gray-500 text-white hover:bg-[#27820C]"
+                  onClick={slideNext} // Call the slideNext function
+                >
+                  <IoIosArrowForward className="text-2xl font-bold" />
+                </button>
+                {/* Custom Previous Button */}
+              </span>
+              <div className="w-full grid grid-cols-1 py-4 gap-4">
+                <AliceCarousel
+                  ref={carouselRef}
+                  responsive={responsive}
+                  disableDotsControls={true}
+                  disableButtonsControls={true}
+                  autoPlay={true}
+                  autoPlayInterval={4000}
+                  infinite={true}
+                  mouseTracking
+                  itemPadding={[0, 50]}
+                  className="w-full gap-4"
+                >
+                  {testimonialData?.map((item) => (
+                    <TestimonialCard
+                      key={item?.Name}
+                      Name={item?.Name}
+                      Designation={item?.Designation}
+                      FeedBack={item?.FeedBack}
+                    />
+                  ))}
+                </AliceCarousel>
+              </div>
             </div>
           </FadeInSection>
         </div>

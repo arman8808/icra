@@ -8,7 +8,6 @@ import AccordionUsage from "../../Components/Accordion/Accordion";
 import Group55 from "../../Assests/Images/Group 55.png";
 import Group56 from "../../Assests/Images/Group 56.png";
 import Group57 from "../../Assests/Images/Group 57.png";
-
 import { FaRegFilePdf } from "react-icons/fa";
 import FadeInSection from "../../Utils/FadeInSection/FadeInSection ";
 import syed from "../../Assests/Images/WhatsApp Image 2024-10-22 at 10.58.36 AM 2.png";
@@ -159,14 +158,18 @@ function AboutUs() {
                 image={syed}
                 Designation={"Director"}
                 Education={"Post Gradute"}
-                Expereince={"10 years of extensive experience in the financial domain."}
+                Expereince={
+                  "10 years of extensive experience in the financial domain."
+                }
               />
               <TemsCard
                 Name={"MOHD TALIB AZIZ"}
                 image={tablib}
                 Designation={"Director"}
                 Education={"Post Gradute"}
-                Expereince={"15 years of extensive experience in financial modeling, research, and analytics."}
+                Expereince={
+                  "15 years of extensive experience in financial modeling, research, and analytics."
+                }
               />
             </div>
           </div>
