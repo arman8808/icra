@@ -21,7 +21,7 @@ function Footer() {
           <span className="flex items-center justify-start gap-2 cursor-pointer">
             <IoLocationOutline className="text-4xl text-footerText" />
             <p className="text-footerText">
-              Old House No.68,maqbara, Hazrat Gunj,lucknow, Lalbagh (lucknow),
+              Old House No.68,maqbara, Hazratganj,lucknow, Lalbagh (lucknow),
               Lucknow, Lucknow, Uttar Pradesh, India,
             </p>
           </span>{" "}

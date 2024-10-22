@@ -147,7 +147,7 @@ function Home() {
           <div className="w-[80%] mobile:w-[90%] flex items-start justify-between gap-4 bg-secondryBackground px-[1.5rem] py-[1rem] flex-col border-t-md">
             <p className="text-textColor">Trusted by 300+ Clients since 2017</p>
             <div className="flex items-center justify-start gap-[2rem] mobile:grid mobile:grid-cols-2 tablet:grid tablet:grid-cols-3 md:grid md:grid-cols-3 gap-4 w-full">
-            <img
+              <img
                 src={MainLogoImg}
                 alt="logo"
                 className="h-[8rem] object-contain"
@@ -159,7 +159,7 @@ function Home() {
                 className="h-[8rem] object-contain"
                 style={{ aspectRatio: "1 / 1" }}
               />
-            
+
               {/* <img src={logo3} alt="logo" />
               <img src={logo4} alt="logo" />
               <img src={logo5} alt="logo" /> */}
@@ -222,9 +222,7 @@ function Home() {
       >
         <FadeInSection>
           <div className="w-[80%] mobile:w-[90%]  flex flex-col items-start justify-start pt-[2rem]">
-            <h2 className="text-blackShade font-bold text-2xl">
-              What’s Our Services
-            </h2>
+            <h2 className="text-blackShade font-bold text-2xl">Our Services</h2>
             <div className="w-[100%]  grid grid-cols-2 mobile:grid-cols-1 gap-4 pt-[2rem]">
               {ourService?.map((item) => (
                 <CoreServiceCard
@@ -249,7 +247,7 @@ function Home() {
         }}
       >
         <span className="w-full flex items-center justify-center flex-col gap-1">
-          <h2 className="text-blackShade font-bold text-2xl">How we works</h2>
+          <h2 className="text-blackShade font-bold text-2xl">How we work</h2>
           <p className="w-[50%] text-center text-footerText text-lg font-normal">
             Our Methodology: Turning Ideas into Reality
           </p>
