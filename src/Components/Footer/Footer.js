@@ -11,30 +11,35 @@ function Footer() {
       <div className="w-full grid grid-cols-4 mobile:grid-cols-1 tablet:grid-cols-2 md:grid-cols-3 gap-4">
         <div className="flex flex-col items-start justify-start gap-3">
           <img src={logo} alt="logo" />
-          <span className="flex items-center justify-start gap-2 cursor-pointer">
+          <span className="flex items-start justify-start gap-2 cursor-pointer">
             <IoLocationOutline className="text-4xl text-footerText" />
-            <p className="text-footerText">
+            <Link to="https://maps.app.goo.gl/5NgpKMgWPhcHaoMW9" target="_blank">
+            <p className="text-footerText pl-3">
               Business Center 1, M Floor, The Meydan Hotel, Nad Al Sheba, Dubai,
               U.A.E.
             </p>
+            </Link>
+        
           </span>{" "}
-          <span className="flex items-center justify-start gap-2 cursor-pointer">
-            <IoLocationOutline className="text-4xl text-footerText" />
-            <p className="text-footerText">
+          <span className="flex items-start justify-start gap-2 cursor-pointer">
+            <IoLocationOutline className="text-5xl text-footerText" />
+            <Link to="https://maps.app.goo.gl/SiyxPZq9p4sytYF16" target="_blank">
+            <p className="text-footerText pl-3">
               Old House No.68,maqbara, Hazratganj,lucknow, Lalbagh (lucknow),
               Lucknow, Lucknow, Uttar Pradesh, India,
             </p>
+            </Link>
           </span>{" "}
           <span className="flex items-center justify-start gap-2 cursor-pointer">
-            <MdOutlinePhoneInTalk className="text-2xl text-footerText" />
+            <MdOutlinePhoneInTalk className="text-xl text-footerText" />
             <Link to="tel:8601299016">
-              <p className="text-footerText">8601299016</p>
+              <p className="text-footerText pl-3">+91 8601299016</p>
             </Link>
           </span>{" "}
           <span className="flex items-center justify-start gap-2 cursor-pointer">
             <CiMail className="text-2xl text-footerText" />
             <Link to="mailto:Info@icraind.com">
-              <p className="text-footerText">Info@icraind.com</p>
+              <p className="text-footerText pl-3">Info@icraind.com</p>
             </Link>
           </span>
         </div>
@@ -47,9 +52,6 @@ function Footer() {
         </div>
         <div className="flex items-start justify-start flex-col gap-3">
           <h6>Social Media</h6>
-          <p className="text-footerText">Dribbble</p>
-          <p className="text-footerText">Behance</p>
-          <p className="text-footerText">Medium</p>
           <p className="text-footerText">Instagram</p>
           <p className="text-footerText">Facebook</p>
           <p className="text-footerText">Twitter</p>

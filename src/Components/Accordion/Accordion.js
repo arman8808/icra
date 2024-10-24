@@ -7,10 +7,15 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Button from "@mui/material/Button";
 import { IoIosArrowDown } from "react-icons/io";
 
-export default function AccordionUsage({ title, detail }) {
+export default function AccordionUsage({
+  title,
+  detail,
+  expanded,
+  handleChange,
+}) {
   return (
-    <div>
-      <Accordion>
+    <div >
+      <Accordion expanded={expanded} onChange={handleChange}>
         <AccordionSummary
           expandIcon={<IoIosArrowDown />}
           aria-controls="panel1-content"

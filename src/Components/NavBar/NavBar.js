@@ -44,7 +44,7 @@ function NavBar() {
       }
     >
       <div className="flex items-center gap-[2rem]">
-        <img src={logo} alt="logo" className=" object-fit" />
+        <img src={logo} alt="logo" className=" object-fit cursor-pointer" onClick={()=>history('/')}/>
         <ul className="flex items-center gap-4 mobile:hidden tablet:hidden">
           <li>
             <NavLink

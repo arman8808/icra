@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import aboutus from "../../Assests/Images/Rectangle 171.png";
 import aboutus1 from "../../Assests/Images/Image Placeholder1.png";
 import bird from "../../Assests/Images/Frame1.png";
@@ -12,6 +12,7 @@ import { FaRegFilePdf } from "react-icons/fa";
 import FadeInSection from "../../Utils/FadeInSection/FadeInSection ";
 import syed from "../../Assests/Images/WhatsApp Image 2024-10-22 at 10.58.36 AM 2.png";
 import tablib from "../../Assests/Images/WhatsApp Image 2024-10-22 at 10.58.36 AM 1.png";
+import OurSpecialTeam from "../../Components/OurSpecialTeam/OurSpecialTeam";
 
 function AboutUs() {
   const coreValue = [
@@ -66,6 +67,12 @@ function AboutUs() {
         "We accept payments through bank transfers (cheque and electronic payments). Our payment structure includes monthly and quarterly payouts of returns, ensuring transparency and convenience",
     },
   ];
+  const [expanded, setExpanded] = useState(false); // Central state management
+
+  // Function to handle the open/close logic
+  const handleChange = (panelIndex) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panelIndex : false); // If expanded, store the index, else close all
+  };
   return (
     <>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem]  pt-4">
@@ -140,7 +147,7 @@ function AboutUs() {
           </div>
         </FadeInSection>
         <FadeInSection>
-          <div className="w-[80%] mobile:w-[90%] tablet:w-[90%]  px-[1.5rem] py-[1rem]  gap-4 pt-[2rem]  rounded-md">
+          {/* <div className="w-[80%] mobile:w-[90%] tablet:w-[90%]  px-[1.5rem] py-[1rem]  gap-4 pt-[2rem]  rounded-md">
             <div className="grid grid-cols-3 mobile:grid-cols-1">
               <h2 className="text-blackShade font-bold text-2xl">
                 Our Special Teams
@@ -172,7 +179,9 @@ function AboutUs() {
                 }
               />
             </div>
-          </div>
+          </div> */}
+          
+          <OurSpecialTeam/>
         </FadeInSection>
       </div>
       <div
@@ -193,13 +202,15 @@ function AboutUs() {
         </FadeInSection>
         <FadeInSection>
           <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-center justify-between flex-col gap-4">
-            {AccordionData?.map((item) => (
-              <AccordionUsage title={item?.title} detail={item?.detail} />
+            {AccordionData?.map((item,index) => (
+              <AccordionUsage title={item?.title} detail={item?.detail}     index={index}
+              expanded={expanded === index}
+              handleChange={handleChange(index)}/>
             ))}
           </div>
         </FadeInSection>
         <FadeInSection>
-          <span className="w-full  flex items-end justify-end pr-[10%] ">
+          <span className="w-full  flex items-start justify-start pl-[10%] ">
             <a
               href="/Investment Brochure.pdf"
               download={"Investment_Brochure.pdf"}

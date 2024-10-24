@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
-import heroImg from "../../Assests/Images/Image Placeholder.png";
+import React, { useRef, useState } from "react";
+import heroImg from "../../Assests/Images/Image Placeholder.webp";
 import logo from "../../Assests/Images/logo 1.png";
 import logo1 from "../../Assests/Images/logo 2.png";
 import logo3 from "../../Assests/Images/logo 3.png";
 import logo4 from "../../Assests/Images/logo 4.png";
 import logo5 from "../../Assests/Images/logo 5.png";
+import bird from "../../Assests/Images/Frame1.png";
 import CoreServiceCard from "../../Components/CoreServiceCard/CoreServiceCard";
 import wework from "../../Assests/Images/Image Placeholder (1).png";
 import wework1 from "../../Assests/Images/Image Placeholder (2).png";
@@ -35,10 +36,13 @@ import { testimonialData } from "../../TestimonialData";
 import dots from "../../Assests/Images/Ornament11.png";
 import dots1 from "../../Assests/Images/Ornament (1).png";
 import TestimonialCard from "../../Components/TestimonialCard/TestimonialCard";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import impleglobal from "../../Assests/Images/impleglobal.png";
 import MainLogoImg from "../../Assests/Images/MainLogoImg.png";
+import OurSpecialTeam from "../../Components/OurSpecialTeam/OurSpecialTeam";
+import AccordionUsage from "../../Components/Accordion/Accordion";
+import { FaRegFilePdf } from "react-icons/fa";
 function Home() {
   const coreValue = [
     {
@@ -101,6 +105,44 @@ function Home() {
       itemsFit: "contain",
     },
   };
+  const AccordionData = [
+    {
+      title: "Why should I invest in your company?",
+      detail:
+        "Investing is a complex process. Our company has over 15 years of expertise in this field, during which we've developed tailored strategies to suit your investment objectives. Successful investing requires thorough research and timely analysis. We provide that with our dedicated information-sourcing mechanisms, ensuring you stay ahead in this dynamic financial investment landscape.",
+    },
+    {
+      title: "What does your investment company specialize in?",
+      detail:
+        "We offer a broad range of investment services, including wealth management, portfolio diversification,financial planning, and retiremnt solutions. Our strategies are customized to help clients achieve their financial goals efficiently.",
+    },
+    {
+      title: "Is there any guaranteed return on investment?",
+      detail:
+        "No, But we provide a formal agreement with every investor, outlining all details regarding the security of funds and expected return on investment (ROI), giving you peace of mind regarding your investment.",
+    },
+    {
+      title: "What risks are associated with investing?",
+      detail:
+        "All investments involve risk, including the potential loss of principal. The level of risk varies based on the asset class (e.g., stocks vs. bonds) and market conditions. We aim to balance risk and reward based on your risk tolerance. To mitigate risk, we ensure the funds in which we invest are insured.",
+    },
+    {
+      title: "How often will I receive updates on my investments?",
+      detail:
+        "You will receive regular statements, either monthly or quarterly, depending on your account type. Additionally, you can log in to our platform anytime to track and monitor your portfolio's performance.",
+    },
+    {
+      title: "What are the modes and cycles of payment?",
+      detail:
+        "We accept payments through bank transfers (cheque and electronic payments). Our payment structure includes monthly and quarterly payouts of returns, ensuring transparency and convenience",
+    },
+  ];
+  const [expanded, setExpanded] = useState(false); // Central state management
+
+  // Function to handle the open/close logic
+  const handleChange = (panelIndex) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panelIndex : false); // If expanded, store the index, else close all
+  };
   const history = useNavigate();
   const carouselRef = useRef(null);
   const slideNext = () => {
@@ -119,7 +161,11 @@ function Home() {
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] bg-background pt-4 relative">
         <FadeInSection className="w-full flex items-center justify-center">
           <div className="w-[80%] mobile:w-[90%] flex items-center justify-between gap-[4rem] mobile:flex-col tablet:flex-col relative">
-            <img src={heroImg} alt="heroImg" className="object-contain " />
+            <img
+              src={heroImg}
+              alt="heroImg"
+              className="object-contain h-[30rem]"
+            />
             <div className="flex items-start justify-start flex-col gap-[2rem]">
               <h1 className="text-textColor text-3xl font-bold">
                 ICRA (IMPULSE CAPITAL & RESEARCH ANALYSIS) PRIVATE LTD
@@ -144,21 +190,30 @@ function Home() {
           </div>
         </FadeInSection>
         <FadeInSection>
-          <div className="w-[80%] mobile:w-[90%] flex items-start justify-between gap-4 bg-secondryBackground px-[1.5rem] py-[1rem] flex-col border-t-md">
-            <p className="text-textColor">Trusted by 300+ Clients since 2017</p>
-            <div className="flex items-center justify-start gap-[2rem] mobile:grid mobile:grid-cols-2 tablet:grid tablet:grid-cols-3 md:grid md:grid-cols-3 gap-4 w-full">
-              <img
-                src={MainLogoImg}
-                alt="logo"
-                className="h-[8rem] object-contain"
-                style={{ aspectRatio: "1 / 1" }}
-              />
-              <img
-                src={impleglobal}
-                alt="logo"
-                className="h-[8rem] object-contain"
-                style={{ aspectRatio: "1 / 1" }}
-              />
+          <div className="w-[80%] mobile:w-[90%] flex items-start justify-between gap-4  px-[1.5rem] py-[1rem] flex-col border-t-md">
+            {/* <p className="text-textColor">Trusted by 300+ Clients since 2017</p> */}
+            <div className="flex items-center justify-center gap-[3rem] mobile:grid mobile:grid-cols-2 tablet:grid tablet:grid-cols-3 md:grid md:grid-cols-3 gap-4 w-full">
+              <Link
+                to="#"
+
+                // target="_blank"
+              >
+                <img
+                  src={MainLogoImg}
+                  alt="logo"
+                  className="h-[10rem] object-contain"
+                  style={{ aspectRatio: "1 / 1" }}
+                />
+              </Link>
+
+              <Link to="https://impulseglobal.llc/" target="_blank">
+                <img
+                  src={impleglobal}
+                  alt="logo"
+                  className="h-[10rem] object-contain"
+                  style={{ aspectRatio: "1 / 1" }}
+                />
+              </Link>
 
               {/* <img src={logo3} alt="logo" />
               <img src={logo4} alt="logo" />
@@ -335,6 +390,54 @@ function Home() {
           </div>
         </div>
       </FadeInSection>
+      <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
+        <FadeInSection>
+          <OurSpecialTeam />
+        </FadeInSection>
+      </div>
+      <div
+        className="w-full flex items-center justify-center flex-col gap-[3rem]  pt-4 h-[45rem]"
+        style={{
+          backgroundImage: `url("${bird}")`,
+          backgroundRepeat: "no-repeat",
+          backgroundPositionX: "right",
+          backgroundPositionY: "bottom",
+          backgroundSize: "initial",
+          backgroundBlendMode: "hard-light",
+        }}
+      >
+        <FadeInSection>
+          <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-start justify-start flex-col gap-4">
+            <h2 className="text-blackShade font-bold text-2xl">FAQ!</h2>
+          </div>
+        </FadeInSection>
+        <FadeInSection>
+          <div className="w-[80%] mobile:w-[90%] tablet:w-[90%] flex items-center justify-between flex-col gap-4">
+            {AccordionData?.map((item, index) => (
+              <AccordionUsage
+                title={item?.title}
+                detail={item?.detail}
+                index={index}
+                expanded={expanded === index}
+                handleChange={handleChange(index)}
+              />
+            ))}
+          </div>
+        </FadeInSection>
+        <FadeInSection>
+          <span className="w-full  flex items-start justify-start pl-[10%] ">
+            <a
+              href="/Investment Brochure.pdf"
+              download={"Investment_Brochure.pdf"}
+            >
+              <button className="flex items-center justify-center gap-1 button bg-green text-white">
+                {" "}
+                PDF Download <FaRegFilePdf />
+              </button>
+            </a>
+          </span>
+        </FadeInSection>
+      </div>
       <div className="w-full flex items-center justify-center flex-col gap-[3rem] py-4 pt-[3rem] mt-[3rem]">
         <FadeInSection>
           <div className="w-[80%] mobile:w-[90%]  flex flex-col items-start justify-start pt-[2rem]">

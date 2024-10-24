@@ -5,6 +5,10 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #f7f7fc;
   font-family: "Mulish", sans-serif;
@@ -16,12 +20,11 @@ body {
 .card_shadow {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-.border_bottom{
-  border-bottom: 5px solid #547FF3;
+.border_bottom {
+  border-bottom: 5px solid #547ff3;
 }
 .glass-effect {
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
- 
 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   backdrop-filter: blur(10px); /* Blurring the background behind */
@@ -29,14 +32,25 @@ body {
   padding: 20px; /* Padding inside the element */
   color: #fff; /* White text */
 }
-.fade-in {
+/* .fade-in {
   opacity: 0;
   transition: opacity 2s ease-in-out;
 }
 
 .fade-in.show {
   opacity: 1;
+} */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Element starts 20px below */
+  transition: opacity 1s ease-in-out, transform 2s ease-in-out; /* Opacity takes 1s, transform takes 2s */
 }
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0); /* Moves to the original position */
+}
+
 #menu__toggle {
   opacity: 0;
 }
@@ -111,4 +125,8 @@ body {
 }
 .z_index {
   z-index: 999999999;
+}
+
+.my-element {
+  box-shadow: 0 4px 10px rgba(34, 100, 16, 0.5);
 }
