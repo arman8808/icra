@@ -44,7 +44,12 @@ function NavBar() {
       }
     >
       <div className="flex items-center gap-[2rem]">
-        <img src={logo} alt="logo" className=" object-fit cursor-pointer" onClick={()=>history('/')}/>
+        <img
+          src={logo}
+          alt="logo"
+          className=" object-fit cursor-pointer"
+          onClick={() => history("/")}
+        />
         <ul className="flex items-center gap-4 mobile:hidden tablet:hidden">
           <li>
             <NavLink
@@ -72,6 +77,24 @@ function NavBar() {
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               Our Service
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/faq"
+              className="text-lg font-semiBold text-secondTextColor"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              FAQ
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/team"
+              className="text-lg font-semiBold text-secondTextColor"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Team
             </NavLink>
           </li>
           <li>
@@ -140,6 +163,24 @@ function NavBar() {
               }
             >
               Our Service
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/faq"
+              className="text-lg font-semiBold text-secondTextColor"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              FAQ
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/team"
+              className="text-lg font-semiBold text-secondTextColor"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Team
             </NavLink>
           </li>
           <li>

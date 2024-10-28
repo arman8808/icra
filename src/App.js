@@ -6,6 +6,8 @@ import Footer from "./Components/Footer/Footer";
 import { lazy, Suspense, useEffect, useState } from "react";
 import Loader from "./Components/Loader/Loader";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
+import Faq from "./Pages/FAQ/Faq";
+import Teams from "./Pages/Teams/Teams";
 const Home = lazy(() => import("./Pages/Home/Home"));
 const AboutUs = lazy(() => import("./Pages/AboutUs/AboutUs"));
 const OurService = lazy(() => import("./Pages/OurService/OurService"));
@@ -52,6 +54,22 @@ function App() {
             </Suspense>
           }
           path="/ourservice"
+        />
+        <Route
+          element={
+            <Suspense fallback={<Loader />}>
+              <Faq />
+            </Suspense>
+          }
+          path="/faq"
+        />  
+         <Route
+          element={
+            <Suspense fallback={<Loader />}>
+              <Teams />
+            </Suspense>
+          }
+          path="/team"
         />
         <Route
           element={

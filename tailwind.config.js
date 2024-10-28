@@ -29,17 +29,17 @@ module.exports = {
         black: "900",
       },
       colors: {
-        primary: "#1D4ED8", // A blue color for primary usage
-        secondary: "#9333EA", // A purple color for secondary usage
-        accent: "#F59E0B", // An orange color for accent highlights
-        success: "#10B981", // A green color for success indicators
-        danger: "#EF4444", // A red color for errors or warnings
-        warning: "#FBBF24", // A yellow color for warnings
-        info: "#3B82F6", // A blue color for informational highlights
-        dark: "#111827", // A dark gray for background or text
-        light: "#F3F4F6", // A light gray for background or text
-        white: "#FFFFFF", // White color
-        black: "#000000", // Black color
+        primary: "#1D4ED8", 
+        secondary: "#9333EA", 
+        accent: "#F59E0B", 
+        success: "#10B981", 
+        danger: "#EF4444", 
+        warning: "#FBBF24",
+        info: "#3B82F6", 
+        dark: "#111827", 
+        light: "#F3F4F6", 
+        white: "#FFFFFF",
+        black: "#000000", 
         green: "#226410",
         underlineBlue: "#547FF3",
         codGray: "#110F0F",
@@ -50,7 +50,8 @@ module.exports = {
         background:'#efffe6',
         secondryBackground:'#F7F7FC',
         blackShade:'#11142D',
-        footerText:"#92929D"
+        footerText:"#92929D",
+        darkGreen:"#0B2205",
 
       },
       backgroundImage: {

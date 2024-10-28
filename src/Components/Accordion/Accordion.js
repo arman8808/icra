@@ -20,6 +20,7 @@ export default function AccordionUsage({
           expandIcon={<IoIosArrowDown />}
           aria-controls="panel1-content"
           id="panel1-header"
+          className="hover:bg-[#DCFDCA]"
         >
           {title ? title : "Accordion"}
         </AccordionSummary>
